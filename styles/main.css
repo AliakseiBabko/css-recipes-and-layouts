@@ -1,0 +1,507 @@
+@font-face {
+	font-family: "TrendSansOne";
+	src: url("../fonts/Trend-Sans-One.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Cantarell";
+	src: url("../fonts/Cantarell-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Cantarell";
+	src: url("../fonts/Cantarell-Bold.ttf") format("truetype");
+	font-weight: normal;
+	font-style: bold;
+}
+/*---------------------Mediaquery---------------------*/
+@media screen and (max-width: 990px) {
+    .mainWrapper {
+        grid-gap: 0px !important;
+        max-width: var(--imgWidthFull) !important;
+    }
+    .tagTopPanel {
+        display: flex !important;
+    }
+    .sidebar {
+        display: none !important;
+    }
+    .socialIconsSide {
+        display: flex !important;
+    }
+    .socialIcons {
+        display: none !important;
+    }
+    .navBattonPanel {
+        opacity: 1 !important;        
+        text-align: center;
+        line-height: 40px;
+        font-weight: 700;
+        color: rgba(0,0,0,0.2);
+        width: 30px;
+        height: 40px;
+        background: rgba(255,255,255,0.2);
+    }
+}
+@media screen and (max-width: 500px) {
+    .tagTopPanel {
+        display: none !important;
+    }
+    .sidebar {
+        display: none !important;
+    }
+    .socialIcons {
+        display: none !important;
+    }
+    .socialIconsSide {
+        display: none !important;
+    }
+    .socialIconsMobile {
+        display: flex !important;
+    }
+    header nav {
+        filter: none !important;
+    }
+    header ul {
+        opacity: 0;
+        height: 33px !important;
+    }
+    header img {
+        height: 34px !important;
+    }
+    h1 {
+        height: 52px !important;
+        font: 18px "TrendSansOne" !important;
+    }
+    h3 {
+        text-align: center;
+    }
+    .tagsMenu {
+        display: inline-block !important;
+        left: 64px !important;
+    }
+    .tagSign {
+        display: block !important;
+        left: 64px !important;
+    }
+    .options {
+        display: inline-block !important;
+        right: 0 !important;
+        color: rgba(255,255,255,0.4) !important;
+        background: none !important;
+    }
+    .options:hover {
+        color: white !important;
+    }
+    .questionsMenu {
+        left: 0 !important;
+    }
+    .infoMenu {
+        left: 32px !important;
+    }
+    .navBattonPanel > div {
+        line-height: 33px !important;
+        width: 30px;
+        height: 33px !important;
+        top: 52px !important;
+    }
+}
+/*---------------------Body Design---------------------*/
+:root {
+    --mainWrapperWidth: 920px;
+    --sidebarWidth: 255px;
+    --imgWidthFull: 640px;
+}
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+	margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+.bodyWrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+/*----------------------Logo Design---------------------*/
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 28px "TrendSansOne";
+    color:  #6b9ad0;
+    height: 62px;
+    padding-left: 20px;
+    margin: 0 auto;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+/*---------------------Header Design---------------------*/
+header {
+    margin: 0 auto;
+    height: 102px;
+}
+header img {
+    height: 40px;
+}
+header nav {
+    background-color: #6b9ad0;
+    filter: drop-shadow(0px 4px 0px #c6defa);    
+    }
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 40px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+header li {
+    position: relative;
+}
+li a:hover {
+    background-color: rgba(0,0,0,0.2);
+}
+li a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 40%;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 8px solid #6b9ad0;
+}
+li a {
+    display: block;
+    padding: 0 20px;
+    text-decoration: none;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    color: white;
+    line-height: 40px;
+}
+.tagsMenu {
+    display: none;
+    position: absolute;
+}
+.tagSign {
+    display: none;
+    width: 16px;
+    height: 10px;
+    margin-top: 11px;
+    margin-left: 8px;
+    background-color: #6d8bae;    
+    transform: rotate(45deg);
+}
+.tagsMenu::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 18px;
+    right: 4px;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #6d8bae;
+    border-top: 5px solid transparent;    
+    transform: rotate(45deg);
+}
+.tagsMenu::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    top: 18px;
+    right: 8px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.4);
+}
+.options {
+    display: none;
+    position: absolute;
+}
+.questionsMenu {
+    display: inline-block;    
+    position: absolute;
+    top: 62px;
+    left: 0 !important;
+}
+.infoMenu {
+    display: inline-block;    
+    position: absolute;
+    top: 62px;
+    right: 0;
+}
+.navBattonPanel {
+    opacity: 0;
+}
+.navBattonPanel > div {
+    text-align: center;
+    line-height: 40px;
+    font-weight: 700;
+    color: rgba(0,0,0,0.2);
+    width: 30px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+}
+.navBattonPanel > div:hover {
+    cursor: pointer;
+    color: #6d8bae;
+    background: rgba(0,0,0,0.5);
+}
+/*---------------------Main Section Design---------------------*/
+.mainWrapper {
+    max-width: var(--mainWrapperWidth);
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    color: grey;
+    grid-gap: 25px;
+    grid-template:  'tagPanel tagPanel tagPanel'
+                    'firstPost sidebar sideIcons1'
+                    'secondPost sidebar sideIcons2'
+                    'footer footer footer';
+}
+.titleImg {
+    max-width: var(--imgWidthFull);
+    width: 100%;
+    height: auto;
+}
+.firstPost {
+    grid-area: firstPost;
+}
+.secondPost {
+    grid-area: secondPost;
+}
+h3 {
+    margin: 10px 0;
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+.articleRequisites {
+    display: flex;
+    padding: 7px 0px;
+    border-top: 1px solid rgb(202, 202, 202);
+    border-bottom: 1px solid rgb(202, 202, 202);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 13px; 
+    line-height: 25px;
+}
+article, .sidebar p {
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 19px;
+    text-align:justify;
+}
+time {
+    margin-right: 10px;
+}
+/*---------------------Side Bar Design---------------------*/
+.about, .someInfo {
+    color: grey;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    grid-area: sidebar;
+    width: var(--sidebarWidth);
+}
+.sidebar h3 {
+    display: block;
+    border-bottom: 4px solid #6b9ad0;
+    font: 16px "Cantarell";
+    font-weight: bold;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    color: #6b9ad0;
+}
+.sidebar h3 span {
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 24px;
+    background: #6b9ad0;
+    color: white;    
+    margin-right: 5px;
+}
+/*---------------------Tag's Design---------------------*/
+.tagTopPanel, .tagSidePanel {
+    grid-area: tagPanel;    
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: flex-start;
+    -webkit-padding-start: 0px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.tagTopPanel {
+    display: none;
+    margin-top: 25px;
+    margin-left: -17px;
+}
+.tagSidePanel {
+    display: flex;
+}
+.tag {
+    position: relative;
+    height: 16px;
+    line-height: 16px;
+    margin: 3px 8px;
+    padding: 0 12px;
+    background: #6b9ad0;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+.tag:hover {
+    cursor: pointer;
+    filter: grayscale();
+}
+.tag::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: -8px;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid #6b9ad0;
+    border-top: 8px solid transparent;
+}
+.tag::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 5px;
+    right: 0px;
+    border-radius: 50%;
+    background-color: white;
+}
+/*---------------------Social Icons Button Design---------------------*/
+.sideIcons1 {
+    grid-area: sideIcons1;
+}
+.sideIcons2 {
+    grid-area: sideIcons2;
+}
+button:focus {
+    outline: 0;
+}
+.socialIcons {
+    display: block;
+    margin-left: auto;
+}
+.socialIcons button {    
+    filter: grayscale(100%) opacity(0.2);
+    padding: 0;
+}
+.socialIcons button:hover {
+    filter: none;
+}
+.socialIconsSide {
+    grid-area: socialIconsSide;
+    display: none;
+    flex-direction: column;
+    width: 65px;
+}
+.socialIconsMobile {
+    display: none;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    padding: 0;
+}
+.socialIconsMobile button {    
+    color: white;
+    padding: 0;
+}
+button {
+    height: 25px;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 25px;
+}
+.socialIconsSide button {
+    height: 25px;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    margin-bottom: 5px;
+    margin-left: auto;
+    padding: 0;   
+}
+.socialIcons button {
+    color: white;
+}
+i {
+    padding: 5px 5px;
+}
+i.fab.fa-google-plus-g {
+    padding: 5px 5px;
+}
+i span {
+    margin-left: 5px;
+    pointer-events: none;
+}
+.long { 
+    width: 50px;
+}
+.short {
+    width: 40px;
+}
+.facebook {
+    background-color: #3c5a98;
+}
+.googlePlus {
+    background-color: #c25234;
+}
+.twitter {
+    background-color: #00aced;
+}
+.vk {
+    background-color: #48729e;
+}
+.yandex {
+    background-color: #d83933;
+}
+/*----------------------Footer Design---------------------*/
+footer {
+    grid-area: footer;
+    height: 50px;
+}
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+}   
+.spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;    
+    left: calc(50% - 7px);
+    bottom: -230px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    border-top-color: #07d;
+    animation: spinner .6s linear infinite;
+}
